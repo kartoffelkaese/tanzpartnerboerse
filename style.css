@@ -1,0 +1,348 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --black: hsl(0, 0%, 0%);
+    --grey: hsl(0, 1%, 85%);
+
+    --bgoben: hsl(171, 100%, 32%);
+    --bgunten: hsl(318, 92%, 34%);
+    --menu: hsl(345, 6%, 13%);
+    --hover: hsla(318, 92%, 34%, 0.918);
+    --button: hsla(318, 92%, 34%, 0.918);
+    --buttonhover: hsla(318, 92%, 34%, 0.851);
+    --error: hsl(351, 80%, 47%);
+    --success: hsl(171, 100%, 20%);
+    --shadow: hsla(0, 0%, 0%, 0.2);
+    --brad: 5px;
+}
+
+@font-face {
+    font-family: Montserrat;
+    src: url('./fonts/Montserrat.ttf') format('truetype');
+}
+
+body {
+    /* background: var(--bgunten); */
+    background: -webkit-linear-gradient(to bottom, var(--bgoben), var(--bgunten)) fixed;
+    background: linear-gradient(to bottom, var(--bgoben), var(--bgunten)) fixed;
+    font-family: Montserrat, sans-serif;
+}
+
+input, select, textarea {
+	margin: 5px;
+	padding: 5px;
+    border: 1px solid hsl(0, 0%, 53%);
+	border-radius: var(--brad);
+	-moz-border-radius: var(--brad);
+	-webkit-border-radius: var(--brad);
+	box-shadow: 2px 2px 2px 1px var(--shadow);
+	-moz-box-shadow: 2px 2px 2px 1px var(--shadow);
+	-webkit-box-shadow: 2px 2px 2px 1px var(--shadow);
+    resize: none;
+    font-family:inherit;
+    outline: none;
+}
+
+input:focus {
+    background-color: hsl(0, 0%, 98%);
+    outline: none;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+label {
+	display: inline-block;
+	width: 150px;
+}
+
+.small {
+    font-size: 0.7em;
+}
+
+.default-button {
+    background-color: var(--black);
+    color: var(--white);
+    padding: 10px;
+    border: none;
+    font-size: 1.1em;
+}
+
+.menu {
+    margin: 0 auto;
+    background-color: var(--menu);
+    color: var(--grey);
+    border-radius: var(--brad);
+    -moz-border-radius: var(--brad);
+	-webkit-border-radius: var(--brad);
+    padding: 0 15px;
+    box-shadow: 2px 2px 2px 1px var(--shadow);
+    -moz-box-shadow: 2px 2px 2px 1px var(--shadow);
+	-webkit-box-shadow: 2px 2px 2px 1px var(--shadow);
+    width: 70vw;
+}
+
+.menu ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+
+.menu li {
+    float: left;
+}
+
+.menu li a {
+    display: block;
+    color: var(--white);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.menu li a:hover {
+    background-color: var(--hover);
+}
+
+h1 {
+    margin: 10px auto;
+    width: 70vw;
+}
+
+.content {
+    margin: 0 auto;
+    background-color: var(--white);
+    border-radius: var(--brad);
+    -moz-border-radius: var(--brad);
+	-webkit-border-radius: var(--brad);
+    padding: 15px;
+    box-shadow: 2px 2px 2px 1px var(--shadow);
+    -moz-box-shadow: 2px 2px 2px 1px var(--shadow);
+	-webkit-box-shadow: 2px 2px 2px 1px var(--shadow);
+    width: 70vw;
+}
+
+.infobox {
+    background-color: var(--success);
+    color: var(--white);
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: var(--brad);
+    -moz-border-radius: var(--brad);
+	-webkit-border-radius: var(--brad);
+    box-shadow: 2px 2px 2px 1px var(--shadow);
+    -moz-box-shadow: 2px 2px 2px 1px var(--shadow);
+	-webkit-box-shadow: 2px 2px 2px 1px var(--shadow);
+}
+
+.errorbox {
+    background-color: var(--error);
+    color: var(--white);
+    padding: 5px;
+    margin: 5px 0;
+    border-radius: var(--brad);
+    -moz-border-radius: var(--brad);
+	-webkit-border-radius: var(--brad);
+    box-shadow: 2px 2px 2px 1px var(--shadow);
+    -moz-box-shadow: 2px 2px 2px 1px var(--shadow);
+	-webkit-box-shadow: 2px 2px 2px 1px var(--shadow);
+}
+
+.suche {
+    text-align: center;
+}
+
+.suche a,
+.suche a:visited {
+    color: var(--black);
+    display: block;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.suche a:hover {
+    background-color: var(--hover);
+    color: var(--white);
+}
+
+/* Anzeigen-Loop */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.beitrag, .benutzer {
+    box-sizing: border-box;
+    flex-grow: 1;
+    border: 1px solid var(--black);
+    margin: 5px 0;
+    padding: 10px;
+}
+
+.benutzer {
+    border-radius: var(--brad) 0 0 var(--brad);
+    -moz-border-radius: var(--brad) 0 0 var(--brad);
+	-webkit-border-radius: var(--brad) 0 0 var(--brad);
+    border-right: none;
+}
+
+.benutzer > hr {
+    border: 1px solid var(--grey);
+}
+
+.beitrag {
+    border-radius: 0 var(--brad) var(--brad) 0;
+	-moz-border-radius: 0 var(--brad) var(--brad) 0;
+	-webkit-border-radius: 0 var(--brad) var(--brad) 0;
+}
+
+.container > .beitrag {
+    width: 70%;
+}
+
+.container > .benutzer {
+    width: 30%;
+}
+
+
+.button {
+    background-color: var(--button);
+    color: var(--white);
+    border-radius: var(--brad);
+    -moz-border-radius: var(--brad);
+	-webkit-border-radius: var(--brad);
+    text-decoration: none;
+}
+
+.button#delete {
+    cursor: pointer;
+    background-color: var(--error);
+}
+
+.button#kontakt {
+    cursor: pointer;
+    float: right;
+    background-color: var(--button);
+    padding: 10px;
+    color: var(--white);
+    border-radius: var(--brad);
+    -moz-border-radius: var(--brad);
+	-webkit-border-radius: var(--brad);
+    text-decoration: none;
+}
+
+.button#kontakt:hover {
+    background-color: var(--buttonhover);
+}
+
+.button:hover {
+    background-color: var(--buttonhover);
+}
+/* /Anzeigen-Loop */
+
+/* Kontaktformular */
+.kontaktform textarea {
+    width: 100%;
+    height: 200px;
+}
+
+textarea#nachricht {
+    margin: 10px -5px;
+    padding: 5px;
+}
+
+.kontaktform
+
+.from {
+    padding: 5px 0;
+    font-size: 1.1em;
+}
+
+.fromtext {
+    background-color: var(--grey);
+    padding: 10px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+/* /Kontaktformular */
+
+/* Profil-Tabelle */
+table td {
+    padding: 5px;
+    /* word-break: break-word; */
+}
+/* /Profil-Tabelle */
+
+/* Details-Banner bei Registrierung */
+details {
+    margin: 5px;
+    cursor: pointer;
+}
+
+summary + p {
+    background-color: var(--grey);
+    padding: 5px;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+    font-size: 0.8em;
+    cursor: default;
+    width: 37%;
+}
+
+/* /Details-Banner bei Registrierung */
+@media all and (max-width: 720px) {
+    .menu {
+        width: auto;
+    }
+    .content {
+        width: auto;
+    }
+    summary + p {
+        width: auto;
+    }
+    .regform {
+        text-align: center;
+    }
+    .container {
+        margin: 0 auto;
+    }
+    .container > .beitrag,
+    .container > .benutzer {
+        width: 100% !important;
+        margin: 0 auto;
+    }
+    .container > .beitrag {
+        margin: 0 0 5px 0;
+    }
+    .benutzer {
+        border-radius: var(--brad) var(--brad) 0 0;
+        -moz-border-radius: var(--brad) var(--brad) 0 0;
+        -webkit-border-radius: var(--brad)var(--brad) 0 0;
+        border-bottom: none;
+        border-right: 1px solid var(--black);
+    }
+    .beitrag {
+        border-radius: 0 0 var(--brad) var(--brad);
+        -moz-border-radius: 0 0 var(--brad) var(--brad);
+        -webkit-border-radius: 0 0 var(--brad) var(--brad);
+    }
+    h1 {
+        text-align: center;
+    }
+    label {
+        font-size: 1.1em;
+    }
+    input, select, textarea {
+        text-align: center;
+        width: 90%;
+        font-size: 1.1em;
+    }
+}
